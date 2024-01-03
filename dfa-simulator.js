@@ -23,7 +23,7 @@ function setup() {
     createCanvas(viewWidth, viewHeight);
     sectorsHorizontal = viewWidth / sectorSize;
     sectorsVertical = viewHeight / sectorSize;
-    textFont(font);
+    // textFont(font);
 
     for (let i = 0; i < 2; i++) {
         let n = new Node(i);
@@ -94,7 +94,6 @@ function selectNode() {
             break;
         }
     }
-
 }
 
 
