@@ -1,19 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <style>
-    body{
+    body {
         margin: 0px;
         padding: 0px;
     }
+
+    .side-pannel {
+        width: 200px;
+        background-color: rgb(214, 214, 214);
+        padding: 16px;
+    }
+
+    .form-feild {
+        margin-bottom: 8px;
+        padding-top: 8px;
+    }
 </style>
+
 <body>
+    <div style="display: flex;">
+        <div id="canvas-container">
+
+        </div>
+        <div id="propertiesSidebar" class="side-pannel">
+            Properties
+            <div>
+                <div class="form-feild">
+                    Name
+                    <input type="text" name="id" id="input-name">
+                    <input type="button" onclick="changeName()" value="OK">
+                </div>
+                <div class="form-feild">
+                    Transistions<br>
+                    on input
+                    <select id="input-transistion-on-options" onchange="onTransistionSelect()">
+                    </select>
+                    to state
+                    <select id="input-transistion-state-options" onchange="onTransistionSelect()">
+                    </select>
+                    <br>
+                    <input type="button" onclick="addTransistion()" value="ADD">
+                    <div id="show-added-transistions">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button onclick="addNewState()" type="button">Add New State</button>
+        <input type="text" id="input-new-input">
+        <button  type="button">Add Input</button>
+        <button type="button">Delete State</button>
+    </div>
 </body>
 <script src="./p5.js"></script>
-<script src="./node.js"></script>
+<script src="./state.js"></script>
 <script src="./dfa-simulator.js"></script>
+<script src="./pannel.js"></script>
+
 </html>
