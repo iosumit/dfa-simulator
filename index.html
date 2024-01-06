@@ -55,10 +55,19 @@
     </div>
 
     <div>
-        <button onclick="addNewState()" type="button">Add New State</button>
-        <input type="text" id="input-new-input">
-        <button  type="button">Add Input</button>
-        <button type="button">Delete State</button>
+        <div>
+           <h3>&emsp;Operations</h3>
+           &emsp;<button onclick="addNewState()" type="button">Add New State</button>
+            <input type="text" id="input-new-input">
+            <button  type="button" onclick="addNewInput()">Add Input</button>
+            <button type="button" onclick="deleteState()">Delete State</button>
+        </div>
+        <div>
+            <h3>&emsp; Inputs</h3>
+            <ul id="show-inputs">
+
+            </ul>
+        </div>
     </div>
 </body>
 <script src="./p5.js"></script>

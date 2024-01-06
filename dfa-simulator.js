@@ -30,12 +30,6 @@ function setup() {
     canvas.elt.addEventListener("contextmenu", (e) => e.preventDefault())
     sectorsHorizontal = viewWidth / sectorSize;
     sectorsVertical = viewHeight / sectorSize;
-
-    for (let i = 0; i < 2; i++) {
-        let n = new State(i);
-        n.position = getRandomPosition()
-        states.push(n);
-    }
 }
 
 const getRandomPosition=() => [

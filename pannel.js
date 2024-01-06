@@ -2,9 +2,50 @@ let propertiesForm = document.getElementById('propertiesForm')
 let propertyName = document.getElementById('input-name')
 let propertyTransOnOption = document.getElementById('input-transistion-on-options')
 let propertyTransStateOption = document.getElementById('input-transistion-state-options')
+let inputNewInput = document.getElementById('input-new-input')
 let showAddedTransistions = document.getElementById('show-added-transistions')
+let showInputs = document.getElementById('show-inputs')
 let propertiesSidebar = document.getElementById('propertiesSidebar')
 propertiesSidebar.style.display = 'none';
+
+
+
+function addNewState() {
+    let n = new State(states.length+1);
+    n.position = getRandomPosition()
+    states.push(n);
+}
+
+function deleteState() {
+    const index = states.indexOf(selectedState);
+    if (index > -1) { 
+        states.splice(index, 1); 
+    }
+}
+
+function deleteInput(key) {
+    const index = inputs.indexOf(key);
+    if (index > -1) { 
+        inputs.splice(index, 1); 
+    }
+    showAllInputs()
+}
+
+function showAllInputs() {
+    let addedInputs = ""
+    for (const ip of inputs) {
+        addedInputs += `<li> <b>${ip}</b> <button onclick="deleteInput('${ip}')">DEL</button> </li>`;
+    }
+    showInputs.innerHTML = addedInputs;
+}
+
+function addNewInput() {
+    if(inputNewInput.value!="" && !inputs.includes(inputNewInput.value)){
+        inputs.push(inputNewInput.value)   
+    }
+    inputNewInput.value="";
+    showAllInputs()
+}
 
 function onStateSelect() {
     propertiesSidebar.style.display = 'block';
